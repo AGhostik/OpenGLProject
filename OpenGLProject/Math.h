@@ -1,12 +1,12 @@
 #pragma once
-#include <stdlib.h>
+#include "OpenGL.h"
 
 class Math
 {
-public:
-	double Random(double from, double to);
-	float Random(float from, float to);
+public:	
 	int Random(int max);
+	float Random(float from, float to);
+	double Random(double from, double to);	
 	Math();
 	~Math();
 };

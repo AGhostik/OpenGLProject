@@ -1,18 +1,15 @@
 #include "Math.h"
 
-double Math::Random(double from, double to)
-{
-	return from + ( rand() / (RAND_MAX / (to - from)) );
-}
-
-float Math::Random(float from, float to)
-{
-	return from + ( rand() / (RAND_MAX / (to - from)) );
-}
-
-int Math::Random(int max)
-{
+int Math::Random(int max) {
 	return rand() % max;
+}
+
+float Math::Random(float from, float to) {
+	return from + ( rand() / (RAND_MAX / (to - from)) );
+}
+
+double Math::Random(double from, double to) {
+	return from + ( rand() / (RAND_MAX / (to - from)) );
 }
 
 Math::Math()

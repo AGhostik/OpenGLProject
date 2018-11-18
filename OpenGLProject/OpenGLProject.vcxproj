@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math.h" />
+    <ClInclude Include="OpenGL.h" />
     <ClInclude Include="OpenGLEventHandlers.h" />
     <ClInclude Include="Point.h" />
   </ItemGroup>

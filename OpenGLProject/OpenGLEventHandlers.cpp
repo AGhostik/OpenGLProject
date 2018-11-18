@@ -26,11 +26,11 @@ void __cdecl OpenGLEventHandlers::display() {
 	glVertex2i(point.x, point.y);
 	for (int i = 0; i < 10000; i++)
 	{
-		int index = math.Random(3);
+		GLint index = math.Random(3);
 
-		float red = math.Random(0, 1.0);
-		float green = math.Random(0, 1.0);
-		float blue = math.Random(0, 1.0);
+		GLfloat red = math.Random(0, 1.0f);
+		GLfloat green = math.Random(0, 1.0f);
+		GLfloat blue = math.Random(0, 1.0f);
 		glColor3f(red, green, blue);
 
 		point.x = (point.x + triangle[index].x) / 2;
