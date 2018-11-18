@@ -4,6 +4,13 @@
 #include "glut.h"
 #include "OpenGLEventHandlers.h"
 
+void init() {
+	glClearColor(0, 0, 0, 0);
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(0, 800, 0, 600);
+}
 
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
@@ -16,6 +23,8 @@ int main(int argc, char** argv) {
 	glutReshapeFunc(OpenGLEventHandlers::reshape);
 	glutMouseFunc(OpenGLEventHandlers::mouse);
 	glutKeyboardFunc(OpenGLEventHandlers::keyboard);
+
+	init();
 
 	glutMainLoop();
 }
