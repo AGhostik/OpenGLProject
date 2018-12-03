@@ -14,24 +14,6 @@ void __cdecl OpenGLEventHandlers::display() {
 void __cdecl OpenGLEventHandlers::reshape(int width, int height) {
 }
 
-int OpenGLEventHandlers::currentPoint = 0;
-Point OpenGLEventHandlers::points[3];
-
-void __cdecl OpenGLEventHandlers::_clearScreen() {
-	glClear(GL_COLOR_BUFFER_BIT);
-	glFlush();
-}
-
-void __cdecl OpenGLEventHandlers::_drawPoint(Point point) {
-	glColor3f(1, 1, 1);
-
-	glBegin(GL_POINTS);
-		glVertex2i(point.x, point.y);
-	glEnd();
-
-	glFlush();
-}
-
 void __cdecl OpenGLEventHandlers::mouse(int button, int state, int x, int y) {
 
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
@@ -55,6 +37,24 @@ void __cdecl OpenGLEventHandlers::mouse(int button, int state, int x, int y) {
 }
 
 void __cdecl OpenGLEventHandlers::keyboard(unsigned char key, int x, int y) {
+}
+
+int OpenGLEventHandlers::currentPoint = 0;
+Point OpenGLEventHandlers::points[3];
+
+void OpenGLEventHandlers::_clearScreen() {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glFlush();
+}
+
+void OpenGLEventHandlers::_drawPoint(Point point) {
+	glColor3f(1, 1, 1);
+
+	glBegin(GL_POINTS);
+		glVertex2i(point.x, point.y);
+	glEnd();
+
+	glFlush();
 }
 
 void OpenGLEventHandlers::_triangle(Point point1, Point point2, Point point3) {
