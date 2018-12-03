@@ -15,6 +15,12 @@ void __cdecl OpenGLEventHandlers::reshape(int width, int height) {
 }
 
 void __cdecl OpenGLEventHandlers::mouse(int button, int state, int x, int y) {
+	static int currentPoint;
+	static Point points[3];
+
+	if (currentPoint < 0 || currentPoint > 3) {
+		currentPoint = 0;
+	}
 
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 		if (currentPoint == 3) {
@@ -38,9 +44,6 @@ void __cdecl OpenGLEventHandlers::mouse(int button, int state, int x, int y) {
 
 void __cdecl OpenGLEventHandlers::keyboard(unsigned char key, int x, int y) {
 }
-
-int OpenGLEventHandlers::currentPoint = 0;
-Point OpenGLEventHandlers::points[3];
 
 void OpenGLEventHandlers::_clearScreen() {
 	glClear(GL_COLOR_BUFFER_BIT);
